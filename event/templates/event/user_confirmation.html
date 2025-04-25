@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #6a1b9a, #4a148c);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            padding: 25px;
+            background: #f9f9f9;
+        }
+        .donation-section {
+            background: white;
+            border-left: 4px solid #ff6d00;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .bank-details {
+            background: #f0e6ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6d00;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        h2 {
+            color: #6a1b9a;
+        }
+        h3 {
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Your Conference Registration Is Confirmed!</h1>
+    </div>
+    
+    <div class="content">
+        <p>Dear {{ user.full_name }},</p>
+        
+        <p>Your registration is confirmed and you have a seat for you at the <strong>Would You Marry Me Conference 2.0!</strong>! Your registration details have been received, and we're preparing an unforgettable experience for you.</p>
+        
+        <div class="donation-section">
+                        
+            <h3>Donations</h3>
+            <div class="bank-details">
+                <p><strong>Account Name:</strong> Buzz-Aid Therapy</p>
+                <p><strong>Bank:</strong> Fidelity Bank</p>
+                <p><strong>Account Number:</strong> 5601421729</p>
+            </div>
+            
+            <center>
+                <a href="https://bit.ly/SIDCDonation" class="cta-button">
+                    Give Online Now
+                </a>
+            </center>
+        </div>
+        
+        <h3>Other Partnership Opportunities:</h3>
+        <p>You can also support through:</p>
+        <ul>
+            <li>Media coverage</li>
+            <li>Services</li>
+            <li>Gifts for our speakers and attendees  or by partnering with us, you can do so by calling</li>
+        </ul>
+        
+        <p><strong>Contact our team to discuss partnership:</strong></p>
+        <p>Busola - <a href="tel:+2347063917218‬">+234 706 391 7218‬</a></p>
+        <p>Oluwatobi - <a href="tel:+234 9077256333‬">+234 907 725 6333‬</a></p>
+        
+        <p>Every contribution helps us reach more lives and spread God's vision for individuals, relationships and marriages!</p>
+        
+        <p>Stay updated on our convener's page:<br>
+        <a href="https://www.facebook.com/share/1BysgPSapm/">www.facebook.com/share/1BysgPSapm/ </a></p>
+        
+        <p>We can't wait to see you there!</p>
+    </div>
+    
+    <div class="footer">
+        <p>Warm regards,<br>
+        <strong>WYMYC 2.0 Team</strong></p>
+        
+        <p style="color: #6a1b9a; font-size: 0.8em;">
+            Saying I Do Conference | Transforming Marriages, Building Legacies
+        </p>
+    </div>
+</body>
+</html>

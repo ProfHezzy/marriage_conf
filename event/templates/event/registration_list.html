@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Event Registration List</h1>
+    <!-- Cards to display total registration and all-->
+    <div class="card">
+        <h2>Total Registrations</h2>
+        <p>{{ total_registrations }}</p>
+    </div>
+    
+    <table>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Country</th>
+            <th>Registered At</th>
+        </tr>
+        {% for reg in registrations %}
+        <tr>
+            <td>{{ reg.full_name }}</td>
+            <td>{{ reg.email }}</td>
+            <td>{{ reg.phone }}</td>
+            <td>{{ reg.country }}</td>
+            <td>{{ reg.registered_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
