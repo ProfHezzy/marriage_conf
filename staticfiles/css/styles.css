@@ -1,0 +1,1218 @@
+:root {
+    /* Brand Colors - Adjusted for richer, more harmonious tones */
+    --brand-purple: #673AB7; /* A richer, deeper purple */
+    --brand-orange: #FF5722; /* A warmer, more inviting orange */
+    --brand-green: #4CAF50; /* A vibrant, natural green */
+    
+    /* Derived Colors - For gradients and hover states */
+    --purple-light: #9575CD;
+    --purple-dark: #311B92;
+    --orange-light: #FF8A65;
+    --orange-dark: #BF360C;
+    --green-light: #81C784;
+    --green-dark: #2E7D32;
+    
+    /* Neutrals - Expanded for better contrast and depth */
+    --white: #ffffff;
+    --light-gray: #f8f9fa; /* Lighter background for sections */
+    --medium-gray: #e9ecef; /* Subtle borders/dividers */
+    --dark-gray: #343a40; /* Stronger text/element color */
+    --text-muted: #6c757d; /* Lighter text for descriptions */
+    
+    /* Global Text Colors */
+    --primary-text-color: var(--dark-gray);
+    --secondary-text-color: var(--text-muted);
+}
+
+/* Base Styles & Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-text-color);
+    line-height: 1.7; /* Slightly increased line-height for readability */
+    overflow-x: hidden;
+    background-color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--brand-purple); /* Headings use the primary brand color */
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2.5rem; /* More space below title */
+    font-size: 2.5rem; /* Larger section titles */
+    color: var(--brand-purple);
+    padding-bottom: 15px; /* Space for the underline */
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Align with bottom of padding */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Wider underline */
+    height: 4px; /* Thicker underline */
+    background: linear-gradient(90deg, var(--brand-orange), var(--brand-green)); /* Gradient underline */
+    border-radius: 2px;
+}
+
+.lead {
+    font-size: 1.25rem; /* Slightly larger lead text */
+    font-weight: 300;
+    color: var(--secondary-text-color);
+    margin-bottom: 2rem;
+}
+
+/* Header (Navbar) */
+.navbar {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+    background: linear-gradient(135deg, var(--brand-green), var(--purple-dark)); /* Initial gradient */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Soft shadow */
+    padding: 1rem 0; /* More padding for a bolder look */
+}
+
+.navbar-brand {
+    font-size: 1.8rem; /* Larger brand text */
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--orange-light); /* Hover effect for brand */
+    transform: translateX(5px);
+}
+
+.navbar-brand img {
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); /* Subtle shadow on logo */
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar.scrolled {
+    background: var(--white) !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15); /* More pronounced shadow when scrolled */
+    padding: 0.75rem 0 !important;
+}
+
+.navbar.scrolled .nav-link {
+    color: var(--dark-gray) !important; /* Darker text for scrolled state */
+    font-weight: 600;
+}
+
+.navbar.scrolled .brand-text {
+    color: var(--brand-purple); /* Brand text also changes color */
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.75rem 1.2rem !important; /* Increased padding */
+    color: var(--white) !important; /* Default white for nav links */
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--brand-orange); /* Underline effect */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover {
+    color: var(--brand-orange) !important; /* Hover color */
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+    transform: translateX(0);
+}
+
+/* Buttons */
+.btn {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.8rem 2.2rem;
+    border-radius: 50px; /* Pill-shaped buttons */
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow on buttons */
+}
+
+.btn-primary { /* Used for Register Now and similar actions */
+    background: linear-gradient(45deg, var(--brand-orange), var(--orange-dark));
+    border: none;
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.4);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, var(--orange-dark), var(--brand-orange));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 87, 34, 0.6);
+}
+
+.btn-outline-light { /* Used for Meet Speakers, View Schedule */
+    border: 2px solid var(--white);
+    color: var(--white);
+    background-color: transparent;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--white);
+    color: var(--brand-orange);
+    border-color: var(--white);
+    transform: translateY(-3px);
+}
+
+.btn-outline-primary { /* Used for View All Speakers, View More Memories */
+    border: 2px solid var(--brand-purple);
+    color: var(--brand-purple);
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--brand-purple);
+    color: var(--white);
+    border-color: var(--brand-purple);
+    transform: translateY(-3px);
+}
+
+.btn-orange { /* Directly mapping to brand-orange for specific buttons */
+    background-color: var(--brand-orange);
+    border-color: var(--brand-orange);
+    color: var(--white);
+}
+
+.btn-orange:hover {
+    background-color: var(--orange-dark);
+    border-color: var(--orange-dark);
+    transform: translateY(-3px);
+}
+
+/* Hero Section (Carousel) */
+.hero-section {
+    position: relative;
+    padding-top: 0; /* Remove top padding as carousel handles height */
+}
+
+#heroCarousel .carousel-item {
+    height: 700px; /* Fixed height for carousel items */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#heroCarousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6); /* Darken images slightly for text contrast */
+}
+
+#heroCarousel .carousel-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align text to the left */
+    text-align: left;
+    padding: 2rem 5%; /* Padding for caption content */
+    background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0)); /* Gradient overlay */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Text shadow for readability */
+}
+
+#heroCarousel .carousel-caption h1 {
+    font-size: 4.5rem; /* Larger, more impactful heading */
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-out forwards; /* Animation for heading */
+    opacity: 0;
+}
+
+#heroCarousel .carousel-caption p {
+    font-size: 1.75rem; /* Larger lead paragraph */
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 1s ease-out 0.3s forwards; /* Animation for paragraph */
+    opacity: 0;
+}
+
+#heroCarousel .carousel-caption .btn {
+    animation: fadeInUp 1s ease-out 0.6s forwards; /* Animation for buttons */
+    opacity: 0;
+    margin-right: 15px; /* Space between buttons */
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Carousel Controls */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%; /* Make controls smaller */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--light-gray);
+    padding: 6rem 0;
+}
+
+.about-image {
+    position: relative;
+    margin-bottom: 3rem; /* Space below images on small screens */
+}
+
+.about-image img {
+    border-radius: 12px; /* Smoother corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-image img:last-child {
+    position: absolute;
+    bottom: -40px; /* Slightly lower position */
+    right: -40px; /* More offset */
+    border: 8px solid var(--white); /* Thicker white border */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.icon-box {
+    width: 60px; /* Larger icons */
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem; /* Larger icon size */
+    border-radius: 50%;
+    background-color: var(--brand-purple); /* Default icon background */
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-right: 1.5rem;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.icon-box i {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+.icon-box:hover i {
+    transform: rotate(15deg);
+}
+
+
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(90deg, var(--brand-purple), var(--brand-green)); /* Richer gradient background */
+    color: var(--white);
+    padding: 5rem 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.stats-section .display-4 {
+    font-size: 3.8rem; /* Larger numbers */
+    font-weight: 800;
+    color: var(--orange-light); /* Accent color for numbers */
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.stats-section .display-4:hover {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.stats-section p {
+    font-size: 1.3rem; /* Larger labels */
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+/* Speakers Section */
+.speaker-card {
+    border: none; /* Remove default border */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Deeper shadow */
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+    background-color: var(--white);
+    padding-bottom: 20px; /* Added padding to bottom */
+}
+
+.speaker-card:hover {
+    transform: translateY(-15px); /* More pronounced lift */
+    box-shadow: 0 15px 40px rgba(106, 27, 154, 0.3); /* Stronger shadow on hover */
+}
+
+.speaker-img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem; /* Center and add margin */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--brand-orange); /* Orange border around image */
+    box-shadow: 0 0 0 5px var(--brand-purple); /* Purple outer ring */
+    transition: all 0.3s ease;
+}
+
+.speaker-card:hover .speaker-img {
+    transform: scale(1.05); /* Slight zoom on image */
+    border-color: var(--purple-dark); /* Change border color on hover */
+}
+
+.speaker-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.speaker-img .social-links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(var(--brand-purple), 0.9); /* Opaque background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Cover entire image */
+    opacity: 0;
+    transform: translateY(100%); /* Start off-screen */
+    transition: all 0.4s ease-out;
+}
+
+.speaker-card:hover .social-links {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.speaker-img .social-links a {
+    background-color: var(--white); /* White icons */
+    color: var(--brand-purple); /* Purple icon color */
+    margin: 0 8px; /* More space */
+    width: 45px; /* Larger social icons */
+    height: 45px;
+    font-size: 1.2rem;
+    border: 2px solid var(--brand-purple); /* Border for icons */
+}
+
+.speaker-img .social-links a:hover {
+    background-color: var(--brand-orange);
+    color: var(--white);
+    border-color: var(--brand-orange);
+    transform: scale(1.1) rotate(5deg); /* Spin and scale */
+}
+
+.speaker-card h5 {
+    font-size: 1.6rem;
+    color: var(--brand-purple);
+    margin-bottom: 0.5rem;
+}
+
+.speaker-card p.text-primary {
+    color: var(--brand-orange) !important; /* Ensure accent color */
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Schedule Section */
+#schedule {
+    background: var(--light-gray); /* Light gray for contrast */
+    padding: 6rem 0;
+}
+
+#schedule .card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+#schedule .card:hover {
+    transform: translateY(-8px); /* More lift */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+#schedule .card-header {
+    background: linear-gradient(90deg, var(--brand-purple), var(--purple-light)); /* Gradient header */
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 1.5rem 2rem;
+}
+
+#schedule .list-group-item {
+    border-left: 5px solid var(--brand-orange); /* Thicker accent line */
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: var(--white);
+    padding: 1rem 1.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle shadow for list items */
+}
+
+#schedule .list-group-item:hover {
+    background-color: var(--medium-gray);
+    border-color: var(--brand-green); /* Change color on hover */
+}
+
+#schedule .badge {
+    background-color: var(--brand-green); /* Green badge for location */
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+/* Testimonials Section */
+/* Testimonials Section */
+#testimonials {
+    background-color: var(--white);
+    padding: 6rem 0;
+}
+
+/* Ensure carousel items have appropriate height for content */
+#testimonialCarousel .carousel-item {
+    min-height: 280px; /* Adjust based on your content. Gives space for cards */
+    display: flex !important; /* Ensure content is centered vertically */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 20px 0; /* Add some vertical padding */
+}
+
+.testimonial-card {
+    background-color: var(--light-gray);
+    border: none;
+    border-bottom: 8px solid var(--brand-green);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    padding: 2.5rem;
+    max-width: 800px; /* Limit the max width of the card itself within the column */
+    width: 100%; /* Make it responsive */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.testimonial-card img {
+    border: 4px solid var(--brand-orange);
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover img {
+    transform: scale(1.05);
+}
+
+.testimonial-card h5 {
+    color: var(--brand-purple);
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+}
+
+.testimonial-card p.text-muted {
+    font-size: 0.95rem;
+    color: var(--text-muted) !important;
+}
+
+.testimonial-card .rating i {
+    color: var(--brand-orange);
+    font-size: 1.1rem;
+}
+
+.testimonial-card p.mb-0 {
+    font-style: italic;
+    color: var(--primary-text-color);
+    margin-top: 1rem;
+}
+
+/* Carousel Indicators (Dots) */
+#testimonialCarousel .carousel-indicators [data-bs-target] {
+    background-color: var(--brand-purple); /* Color the dots */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+#testimonialCarousel .carousel-indicators .active {
+    background-color: var(--brand-orange); /* Active dot color */
+    opacity: 1;
+}
+
+/* Carousel Controls (Arrows) */
+#testimonialCarousel .carousel-control-prev-icon,
+#testimonialCarousel .carousel-control-next-icon {
+    background-image: none; /* Remove default Bootstrap icon */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4); /* Background for the arrow circle */
+    transition: background-color 0.3s ease;
+}
+
+#testimonialCarousel .carousel-control-prev-icon::before {
+    font-family: "Font Awesome 6 Free"; /* Use Font Awesome */
+    content: "\f053"; /* Chevron Left icon */
+    font-weight: 900; /* For solid icon */
+    color: white;
+}
+
+#testimonialCarousel .carousel-control-next-icon::before {
+    font-family: "Font Awesome 6 Free"; /* Use Font Awesome */
+    content: "\f054"; /* Chevron Right icon */
+    font-weight: 900;
+    color: white;
+}
+
+#testimonialCarousel .carousel-control-prev-icon:hover,
+#testimonialCarousel .carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker on hover */
+}
+
+/* Responsive adjustments for carousel controls */
+@media (max-width: 768px) {
+    #testimonialCarousel .carousel-control-prev,
+    #testimonialCarousel .carousel-control-next {
+        width: 10%; /* Wider touch area */
+    }
+}
+
+/* CTA Section */
+.py-6.text-white { /* Overriding the old bg color with a gradient */
+    background: linear-gradient(135deg, var(--brand-purple), var(--brand-orange));
+    padding: 6rem 0;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+.py-6.text-white h2 {
+    font-size: 3.2rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.py-6.text-white p {
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 3rem;
+}
+
+.py-6.text-white .btn {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.py-6.text-white .btn:hover {
+    background-color: var(--green-dark);
+    border-color: var(--green-dark);
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.6);
+}
+
+/* Past Conference Collage Section */
+#gallery {
+    background-color: var(--light-gray);
+    padding: 6rem 0;
+}
+
+.collage-container {
+    max-width: 1400px; /* Wider container for more impact */
+    margin: 0 auto;
+    padding: 0 15px; /* Inner padding */
+}
+
+.collage-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-bottom: 25px; /* More space between rows */
+    gap: 25px; /* Gap for consistency */
+}
+
+.collage-item {
+    position: relative;
+    border-radius: 15px; /* More prominent rounding */
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* Stronger shadow */
+    transition: all 0.4s ease-in-out; /* Smoother animation */
+    flex-grow: 1; /* Allow items to grow */
+}
+
+.collage-item:hover {
+    transform: scale(1.02); /* Slight scale on hover */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2); /* Even stronger shadow */
+    z-index: 10; /* Bring hovered item to front */
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Slower, smoother zoom */
+}
+
+.collage-item:hover img {
+    transform: scale(1.08); /* More pronounced zoom */
+    filter: brightness(0.8); /* Slightly dim image on hover */
+}
+
+.collage-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(var(--brand-purple-rgb, 106, 27, 154), 0.9), rgba(var(--brand-purple-rgb, 106, 27, 154), 0.5)); /* Gradient caption */
+    color: var(--white);
+    padding: 20px; /* More padding */
+    text-align: center;
+    font-weight: 700; /* Bolder text */
+    font-size: 1.1rem;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-out;
+}
+
+.collage-item:hover .collage-caption {
+    transform: translateY(0);
+}
+
+/* Collage Item Sizes (using flex basis for better control) */
+.collage-item-small {
+    flex-basis: 28%; /* Adjusted percentage */
+    height: 280px; /* Consistent height */
+    min-width: 200px; /* Minimum width for small items */
+}
+
+.collage-item-medium {
+    flex-basis: 38%; /* Adjusted percentage */
+    height: 280px;
+    min-width: 250px;
+}
+
+.collage-item-large {
+    flex-basis: 58%; /* Adjusted percentage */
+    height: 280px;
+    min-width: 300px;
+}
+
+/* Adjustments for various collage rows to look good */
+.collage-row:nth-child(1) .collage-item-large { flex-basis: 65%; }
+.collage-row:nth-child(1) .collage-item-small { flex-basis: 30%; }
+
+.collage-row:nth-child(2) .collage-item-small:nth-child(1) { flex-basis: 25%; }
+.collage-row:nth-child(2) .collage-item-medium { flex-basis: 45%; }
+.collage-row:nth-child(2) .collage-item-small:nth-child(3) { flex-basis: 25%; }
+
+.collage-row:nth-child(3) .collage-item-medium { flex-basis: 45%; }
+.collage-row:nth-child(3) .collage-item-large { flex-basis: 50%; }
+
+/* Registration Form Section */
+#register {
+    background-color: var(--light-gray);
+    padding: 6rem 0;
+}
+
+#register .card {
+    border: none;
+    border-radius: 15px; /* Consistent rounded corners */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* Stronger shadow */
+    overflow: hidden;
+}
+
+#register .card-header {
+    background: linear-gradient(135deg, var(--brand-purple), var(--purple-dark)); /* Deep gradient header */
+    color: var(--white);
+    padding: 2.5rem 2rem; /* More generous padding */
+    font-size: 2rem;
+    font-weight: 700;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#register .card-body {
+    padding: 3.5rem; /* Even more padding */
+}
+
+.form-label {
+    font-weight: 700; /* Bolder labels */
+    color: var(--brand-purple); /* Purple labels */
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+}
+
+.form-control, .form-select {
+    border: 2px solid var(--medium-gray); /* Thicker, softer border */
+    border-radius: 8px; /* Slightly more rounded inputs */
+    padding: 0.9rem 1.2rem; /* More comfortable padding */
+    font-size: 1rem;
+    color: var(--dark-gray);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--brand-orange); /* Orange focus border */
+    box-shadow: 0 0 0 0.3rem rgba(255, 87, 34, 0.2); /* Soft orange glow */
+    background-color: var(--white);
+}
+
+.form-control.is-invalid, .form-select.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+}
+
+#formErrors {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+
+.btn-lg {
+    font-size: 1.25rem;
+    padding: 1rem 2.5rem;
+}
+
+/* Success Message (example, if you have one) */
+.alert-success {
+    background-color: rgba(76, 175, 80, 0.15); /* Lighter green background */
+    border-left: 6px solid var(--brand-green); /* Thicker border */
+    color: var(--brand-green);
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Footer (if you add one later, this is a placeholder) */
+.footer {
+    background: linear-gradient(135deg, var(--purple-dark), var(--brand-green));
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--orange-light) !important;
+}
+
+.social-icons {
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    background-color: rgba(255,255,255,0.15);
+    color: var(--white);
+    font-size: 1.2rem;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.social-icons a:hover {
+    background-color: var(--orange-light);
+    border-color: var(--orange-light);
+    transform: translateY(-5px) rotate(5deg);
+}
+
+
+/* Utilities and Overrides */
+.py-6 {
+    padding: 6rem 0; /* Consistent padding for all main sections */
+}
+
+.rounded-3 {
+    border-radius: 0.75rem !important; /* Slightly more rounded for general use */
+}
+
+.shadow-sm {
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.08) !important; /* Slightly deeper shadow */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .collage-item-large { flex-basis: 55%; }
+    .collage-item-medium { flex-basis: 40%; }
+    .collage-item-small { flex-basis: 30%; }
+}
+
+@media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+    .hero-section #heroCarousel .carousel-caption h1 {
+        font-size: 3.5rem;
+    }
+    .hero-section #heroCarousel .carousel-caption p {
+        font-size: 1.4rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .about-image img:last-child {
+        width: 180px;
+        height: auto;
+        bottom: -20px;
+        right: -20px;
+    }
+    .collage-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .collage-item,
+    .collage-item-small,
+    .collage-item-medium,
+    .collage-item-large {
+        flex-basis: auto; /* Remove specific flex-basis */
+        width: 100%; /* Take full width */
+        height: 250px; /* Keep consistent height */
+    }
+    #register .card-body {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section #heroCarousel .carousel-item {
+        height: 550px;
+    }
+    .hero-section #heroCarousel .carousel-caption {
+        padding: 1.5rem 5%;
+        text-align: center;
+        align-items: center; /* Center align text on smaller screens */
+    }
+    .hero-section #heroCarousel .carousel-caption h1 {
+        font-size: 2.8rem;
+    }
+    .hero-section #heroCarousel .carousel-caption p {
+        font-size: 1.2rem;
+    }
+    .hero-section .d-flex.gap-3 {
+        flex-direction: column; /* Stack buttons vertically */
+        width: 100%;
+        align-items: center;
+    }
+    .hero-section .d-flex.gap-3 .btn {
+        width: 80%; /* Wider buttons */
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .section-title:after {
+        width: 60px;
+    }
+
+    .about-image img:last-child {
+        width: 150px;
+        bottom: -15px;
+        right: -15px;
+    }
+
+    .stats-section .display-4 {
+        font-size: 3rem;
+    }
+    .stats-section p {
+        font-size: 1.1rem;
+    }
+
+    .speaker-card {
+        padding: 2.5rem 1.5rem;
+    }
+    .speaker-img {
+        width: 120px;
+        height: 120px;
+    }
+    .speaker-img .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    #schedule .card-header {
+        font-size: 1.2rem;
+        padding: 1.2rem 1.5rem;
+    }
+    #schedule .list-group-item {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+    #schedule .badge {
+        font-size: 0.8em;
+    }
+
+    .testimonial-card {
+        padding: 2rem;
+    }
+    .testimonial-card img {
+        width: 50px;
+        height: 50px;
+    }
+    .testimonial-card h5 {
+        font-size: 1.2rem;
+    }
+    .testimonial-card p.mb-0 {
+        font-size: 0.95rem;
+    }
+
+    .py-6.text-white h2 {
+        font-size: 2.5rem;
+    }
+    .py-6.text-white p {
+        font-size: 1.2rem;
+    }
+    .py-6.text-white .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .collage-item {
+        height: 200px !important;
+    }
+
+    #register .card-header {
+        font-size: 1.8rem;
+        padding: 2rem 1.5rem;
+    }
+    #register .card-body {
+        padding: 2rem;
+    }
+    .form-label {
+        font-size: 1rem;
+    }
+    .form-control, .form-select {
+        padding: 0.8rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+    .hero-section #heroCarousel .carousel-item {
+        height: 450px;
+    }
+    .hero-section #heroCarousel .carousel-caption h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section #heroCarousel .carousel-caption p {
+        font-size: 1rem;
+    }
+    .hero-section .d-flex.gap-3 .btn {
+        width: 95%;
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+    .section-title:after {
+        width: 50px;
+    }
+
+    .about-image {
+        margin-bottom: 2rem;
+    }
+    .about-image img:first-child {
+        width: 100%;
+        height: auto;
+    }
+    .about-image img:last-child {
+        display: none; /* Hide smaller overlapping image on very small screens */
+    }
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .d-flex.mt-4 { /* Adjust for the icon boxes in about section */
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        gap: 1.5rem; /* Add gap for vertical spacing */
+    }
+    .d-flex.mt-4 > div {
+        flex-basis: 45%; /* Allow two per row if needed, adjust as desired */
+    }
+    .d-flex.mt-4 .icon-box {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .stats-section .display-4 {
+        font-size: 2.8rem;
+    }
+    .stats-section p {
+        font-size: 1rem;
+    }
+    .stats-section .col-md-3 {
+        margin-bottom: 2rem !important;
+    }
+
+    .speaker-card {
+        padding: 2rem 1rem;
+    }
+    .speaker-img {
+        width: 100px;
+        height: 100px;
+    }
+    .speaker-card h5 {
+        font-size: 1.4rem;
+    }
+    .speaker-card p.text-primary {
+        font-size: 0.9rem;
+    }
+    .speaker-card p:last-of-type { /* Main description paragraph */
+        font-size: 0.9rem;
+    }
+
+    #schedule .card-header {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    #schedule .list-group-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+        font-size: 0.9rem;
+    }
+    #schedule .list-group-item .badge {
+        margin-top: 0.5rem;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    .testimonial-card .d-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .testimonial-card img {
+        margin-right: 0 !important;
+        margin-bottom: 1rem;
+    }
+    .testimonial-card h5 {
+        font-size: 1.1rem;
+    }
+    .testimonial-card p.text-muted {
+        font-size: 0.85rem;
+    }
+    .testimonial-card .rating {
+        margin-bottom: 0.8rem;
+    }
+    .testimonial-card p.mb-0 {
+        font-size: 0.9rem;
+    }
+
+    .py-6.text-white h2 {
+        font-size: 2rem;
+    }
+    .py-6.text-white p {
+        font-size: 1rem;
+    }
+
+    .collage-row {
+        gap: 15px;
+    }
+    .collage-item {
+        height: 180px !important;
+    }
+
+    #register .card-header {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+    #register .card-body {
+        padding: 1.5rem;
+    }
+    .form-label {
+        font-size: 0.9rem;
+    }
+    .form-control, .form-select {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.9rem;
+    }
+    .btn-lg {
+        padding: 0.9rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Custom RGB values for transparent backgrounds */
+:root {
+    --brand-purple-rgb: 106, 27, 154;
+    --brand-orange-rgb: 255, 109, 0;
+    --brand-green-rgb: 46, 125, 50;
+}

@@ -16,3 +16,5 @@ class RegistrationAdmin(ExportMixin, admin.ModelAdmin):
     )
     search_fields = ('full_name', 'email', 'phone', 'country')
     list_filter = ('country', 'attendance_mode', 'marital_status', 'age')
+    ordering = ('-registered_at',)
+    list_per_page = 20

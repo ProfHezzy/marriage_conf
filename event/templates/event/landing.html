@@ -294,49 +294,80 @@
 <!-- Testimonials Section -->
 <section id="testimonials" class="py-6">
     <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="section-title">What People Say</h2>
-            <p class="lead text-muted">Hear from past attendees</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="testimonial-card p-4 rounded-3 shadow-sm h-100">
-                    <div class="d-flex mb-3">
-                        <img src="{% static 'images/testimonial1.jpg' %}" alt="Testimonial 1" class="rounded-circle me-3" width="60" height="60">
-                        <div>
-                            <h5 class="mb-1">Sarah Johnson</h5>
-                            <p class="text-muted small">Married 5 years</p>
+        <h2 class="text-center section-title mb-5">What People Say</h2>
+
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center">
+                        <div class="testimonial-card col-lg-8">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="{% static 'images/client1.jpg' %}" class="rounded-circle me-3" alt="Client 1" width="70" height="70">
+                                <div>
+                                    <h5 class="mb-0">Sarah M.</h5>
+                                    <p class="text-muted mb-0">Event Attendee</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-0">"The 'Would You Marry Me' conference was an eye-opening experience! The speakers were incredibly insightful, and I learned so much about building a stronger, healthier relationship. Highly recommend!"</p>
                         </div>
                     </div>
-                    <div class="rating mb-3">
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                    </div>
-                    <p class="mb-0">"This conference saved our marriage. The communication techniques we learned helped us break through years of misunderstandings. We're closer now than ever before."</p>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="testimonial-card p-4 rounded-3 shadow-sm h-100">
-                    <div class="d-flex mb-3">
-                        <img src="{% static 'images/testimonial2.jpg' %}" alt="Testimonial 2" class="rounded-circle me-3" width="60" height="60">
-                        <div>
-                            <h5 class="mb-1">Michael Brown</h5>
-                            <p class="text-muted small">Engaged</p>
+
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="testimonial-card col-lg-8">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="{% static 'images/client2.jpg' %}" class="rounded-circle me-3" alt="Client 2" width="70" height="70">
+                                <div>
+                                    <h5 class="mb-0">David L.</h5>
+                                    <p class="text-muted mb-0">Couples Session Participant</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-0">"Attending with my partner was one of the best decisions we've made. The practical advice and relatable stories resonated deeply. Our communication has never been better!"</p>
                         </div>
                     </div>
-                    <div class="rating mb-3">
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                        <i class="fas fa-star text-warning"></i>
-                    </div>
-                    <p class="mb-0">"As someone preparing for marriage, this gave me invaluable insights. The financial harmony session alone was worth the price of admission. Can't recommend enough!"</p>
                 </div>
-            </div>
+
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="testimonial-card col-lg-8">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="{% static 'images/client3.jpg' %}" class="rounded-circle me-3" alt="Client 3" width="70" height="70">
+                                <div>
+                                    <h5 class="mb-0">Jessica P.</h5>
+                                    <p class="text-muted mb-0">Single's Track Member</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-0">"As a single person, I found the insights invaluable for preparing for a future relationship. It's not just for couples; it's for anyone committed to personal growth in love."</p>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 </section>
@@ -525,5 +556,4 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script src="{% static 'js/scripts.js' %}"></script>
-
 {% endblock %}

@@ -122,7 +122,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # Automatically add ngrok host when detected
 NGROK_HOST = os.environ.get('NGROK_HOST')
@@ -143,4 +144,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'hezekiahonline94@gmail.com'  # Your email
 EMAIL_HOST_PASSWORD = 'itid fsai eviv tudn'  # App password (not regular password)
 DEFAULT_FROM_EMAIL = 'hezekiahonline94@gmail.com'
+# Admins who receive error emails
 ADMINS = [('Admin Name', 'hezekiahonline94@gmail.com')]  # Who gets the emails

@@ -90,4 +90,5 @@ class RegistrationForm(forms.Form):
         for field_name, field in self.fields.items():
             if 'class' not in field.widget.attrs:
                 field.widget.attrs['class'] = 'form-control'
+
             field.widget.attrs['style'] = 'border-color: var(--brand-purple);'
