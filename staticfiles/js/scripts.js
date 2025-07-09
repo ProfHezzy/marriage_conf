@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
     /************************************
      * Global Utility Functions
      ************************************/
@@ -269,5 +268,4 @@ document.addEventListener('DOMContentLoaded', function () {
             pause: 'hover' // Pause on mouse hover
         });
     }
-
 });
