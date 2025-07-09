@@ -122,19 +122,19 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = []
 
 # Automatically add ngrok host when detected
-NGROK_HOST = os.environ.get('NGROK_HOST')
-if NGROK_HOST:
-    ALLOWED_HOSTS.append(NGROK_HOST)
-    CSRF_TRUSTED_ORIGINS = [f'https://{NGROK_HOST}']
+# NGROK_HOST = os.environ.get('NGROK_HOST')
+# if NGROK_HOST:
+#     ALLOWED_HOSTS.append(NGROK_HOST)
+#     CSRF_TRUSTED_ORIGINS = [f'https://{NGROK_HOST}']
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://853a-102-91-71-137.ngrok-free.app',
-    'https://*.ngrok-free.app'
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://853a-102-91-71-137.ngrok-free.app',
+#     'https://*.ngrok-free.app'
+# ]
 
 # Email Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
